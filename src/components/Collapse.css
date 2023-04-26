@@ -1,0 +1,23 @@
+.collapse {
+    margin-bottom: 30px;
+}
+
+.banner-collapse {
+    background-color: #FF6060;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px 0 20px;
+    color: #FFFFFF;
+    border-radius: 5px;
+    height: 45px;
+}
+
+.banner-collapse .img {
+    cursor: pointer;
+}
+.banner-texte{
+    background: #f6f6f6;
+    color: #FF6060;
+    padding: 20px;
+} 

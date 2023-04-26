@@ -1,0 +1,63 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+.gauche {
+  width: 70%;
+}
+.droite {
+  width: 30%;
+
+  margin-top: 40px;
+}
+h1,
+h2,
+h3,
+h4 {
+  color: #ff6060;
+}
+h1 {
+  font-size: 36px;
+  font-weight: 500;
+}
+h2 {
+  font-size: 18px;
+  font-weight: 500;
+}
+h3 {
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+  border-radius: 10px;
+  margin: 10px 10px 0 0;
+  width: 150px;
+  padding: 8px 0px;
+  text-align: center;
+  float: left;
+}
+h4 {
+  font-size: 18px;
+  font-weight: 400;
+  float: right;
+}
+.portrait {
+  border-radius: 100px;
+  height: 64px;
+  width: 64px;
+  margin-left: 10px;
+  display: block;
+  float: right;
+}
+
+.droite div {
+    margin-top: 10px;
+  clear: right;
+  float: right;
+}
+.droite div img {
+  width: 20px;
+  margin-left: 15px;
+}
+.container50{
+    width:45%;
+}

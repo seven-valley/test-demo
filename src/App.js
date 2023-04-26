@@ -1,25 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+// on importe la fonction pour créer un router
+import { createBrowserRouter,RouterProvider } from "react-router-dom";
+// On importe les Pages
+import Home from './pages/Home';
+import About from './pages/About';
+import Error from './pages/Error';
+import Logement from './pages/Logement';
 
-function App() {
+
+export default function App() {
+  // Définitions des routes
+  //---------------------------------------------
+  const router = createBrowserRouter([
+    {path:"/" ,element:<Home />},
+    {path:"/about" ,element:<About />},
+    {path:"/logement/:id",element:<Logement />},
+    {path:"*",element:<Error />}
+  ]);
+  //---------------------------------------------
+ // on injecte le router dans le composant principal
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <RouterProvider router={router}/>
   );
 }
 
-export default App;

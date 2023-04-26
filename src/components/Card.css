@@ -1,0 +1,26 @@
+.card{
+ width:25%
+}
+
+.card img{
+    object-fit: cover;
+   
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.card:hover{
+    filter: grayscale(100%);
+}
+
+.card div{
+
+   
+   margin-left: 10px;
+    margin-top: -70px;
+    bottom: 5px;
+
+    color: #FFFFFF;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+}

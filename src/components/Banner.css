@@ -25,6 +25,9 @@
     color: #fff;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
   }
+  .img-banner{
+    border-radius: 10px;
+  }
   @media (min-width: 768px) {
     .banner {
       height: 225px;
@@ -36,7 +39,20 @@
       font-size: 48px;
       
     }
-    .img-banner{
+    
+  }
+
+  @media (max-width: 768px) {
+    .banner {
+      height: 225px;
       border-radius: 10px;
     }
+    .texte-banner {
+      top: 20%;
+      padding: 0 5%;
+      text-align: center;
+      font-size: 20px;
+      
+    }
+
   }

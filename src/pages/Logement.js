@@ -17,8 +17,8 @@ export default function Logement() {
         // parcourrir ts les logement 
         // pour trouver le logement en fct de L'ID
         for ( let l of logements){
-            console.log(l.id);
-            console.log(id);
+           // console.log(l.id);
+           // console.log(id);
             if (l.id == id){
                 return l;
             }
@@ -28,6 +28,7 @@ export default function Logement() {
     const {id} = useParams();
     const navigate = useNavigate();
     const [logement, setLogement] = useState({});
+    const [items, setItems] = useState('');
     // quand on fait une action au demarrage
     // il faut utiliser useEffect
     
@@ -38,15 +39,16 @@ export default function Logement() {
         // if ternaire
         (l===-1) && navigate('/error/');
         setLogement(l);
-        console.log(l);
-       
+        //console.log(l);
+        console.log(l.equipments);
+        setItems(l.equipments.map((e,i) => <li key={i}>{e}</li>));
       },[]); 
       // []: cad useEffect est appelé qu'une seul fois
       // on ne veut que useEffect soit appeler des qu'il y a un render
     
       // return on verifie qu'il ya une logement pour afficher l html
       // avec un if ternaire
-      
+   
       
       return logement.id &&(
         <>
@@ -58,12 +60,12 @@ export default function Logement() {
             <div className={styles.gauche}>
                 <h1>{logement.title}</h1>
                 <h2>{logement.location}</h2>
-                {logement.tags.map(tag => <h3>{tag}</h3>)}
+                {logement.tags.map((tag,index) => <h3 key={index}>{tag}</h3>)}
             </div>
             <div className={styles.droite}>
             <img className={styles.portrait} src={logement.host.picture} alt={logement.host.name} />
             <h4>{logement.host.name}</h4>
-            <div><Etoiles rating={logement.rating} /></div>
+            <div><Etoiles  rating={logement.rating} /></div>
             </div>
         </div>
         <div className={styles.container}>
@@ -71,7 +73,7 @@ export default function Logement() {
         <Collapse titre="Description" texte={logement.description} />
         </div>
         <div className={styles.container50}>
-        <Collapse titre="Equipements" liste={logement.equipments} />
+        <Collapse titre="Equipements" texte={items} />
         </div>
         </div>
         </section>
